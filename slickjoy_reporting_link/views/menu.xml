@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- One landing record, shown read-only. Its buttons open SlickJoy Reporting in a new tab. -->
+    <record id="slickjoy_reporting_landing_record" model="slickjoy.reporting.landing"/>
+
+    <record id="view_slickjoy_reporting_landing_form" model="ir.ui.view">
+        <field name="name">slickjoy.reporting.landing.form</field>
+        <field name="model">slickjoy.reporting.landing</field>
+        <field name="arch" type="xml">
+            <form string="SlickJoy Reporting" create="0" edit="0" delete="0">
+                <sheet>
+                    <div class="o_slickjoy_reporting_landing">
+                        <h2>Ask your Odoo data a question</h2>
+                        <p>
+                            SlickJoy Reporting turns a plain-language question into a live chart
+                            from your Odoo data, with the exact read-only query behind it.
+                            $30 a month per organization, with your whole team included.
+                        </p>
+                        <p>
+                            Installing this module does not send any Odoo data to SlickJoy.
+                            Data is sent only after you connect a SlickJoy Reporting account
+                            and run a question.
+                        </p>
+                        <div>
+                            <button style="margin-right:8px" name="action_get_started" type="object" string="Get SlickJoy Reporting" class="btn-primary"/>
+                            <button name="action_sign_in" type="object" string="Sign in" class="btn-secondary"/>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_slickjoy_reporting_landing" model="ir.actions.act_window">
+        <field name="name">SlickJoy Reporting</field>
+        <field name="res_model">slickjoy.reporting.landing</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="slickjoy_reporting_landing_record"/>
+    </record>
+
+    <menuitem
+        id="menu_slickjoy_reporting_root"
+        name="SlickJoy Reporting"
+        web_icon="slickjoy_reporting_link,static/description/icon.png"
+        action="action_slickjoy_reporting_landing"
+        sequence="200"/>
+</odoo>
