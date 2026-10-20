@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,operation
+access_slickjoy_reporting_landing_user,slickjoy.reporting.landing user,model_slickjoy_reporting_landing,base.group_user,r
