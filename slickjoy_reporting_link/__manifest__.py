@@ -15,6 +15,7 @@
         "security/ir.model.access.csv",
         "views/menu.xml",
     ],
+    "images": ["static/description/banner.png"],
     "application": True,
     "installable": True,
     "auto_install": False,
